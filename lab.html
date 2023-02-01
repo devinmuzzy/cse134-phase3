@@ -1,91 +1,91 @@
-<head>
-    <title>Devin's Website</title>
-    <meta charset="UTF-8">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href=/index.html>Home</a></li>
-                <li><a href=/personal.html>Personal</a></li>
-                <li><a href=/lab.html>Lab</a></li>
-                <li><a href=/technical.html>Technical</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>
-            Welcome to the lab.
-        </h1>
-        <fieldset>
-            <legend>choose how you like your html</legend>
-        
-            <input type="radio" name="html-style">
-            <label for="semantic">semantic</label><br>
-        
-            <input type="radio" name="html-style">
-            <label for="hidden">hidden</label><br>
-        
-            <input type="radio" name="html-style">
-            <label for="framework">framework</label>
-        </fieldset>
-        <label for="language-select">Choose a language:</label>
-        <select id="language-select">
-            <optgroup label="High Level">
-                <option>Golang</option>
-                <option>Python</option>
-                <option>Java</option>
-            </optgroup>
-            <optgroup label="Low Level">
-                <option>C</option>
-                <option>x86 assembly</option>
-                <option>ARM assembly</option>
-            </optgroup>
-        </select>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Devin's Website</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href=/index.html>Home</a></li>
+                    <li><a href=/personal.html>Personal</a></li>
+                    <li><a href=/lab.html>Lab</a></li>
+                    <li><a href=/technical.html>Technical</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>
+                Welcome to the lab.
+            </h1>
+            <fieldset>
+                <legend>choose how you like your html</legend>
+                <input type="radio" name="html-style">
+                <label >semantic</label><br>
+                <input type="radio" name="html-style">
+                <label>hidden</label><br>
+                <input type="radio" name="html-style">
+                <label>framework</label>
+            </fieldset>
+            <label for="language-select">Choose a language:</label>
+            <select id="language-select">
+                <optgroup label="High Level">
+                    <option>Golang</option>
+                    <option>Python</option>
+                    <option>Java</option>
+                </optgroup>
+                <optgroup label="Low Level">
+                    <option>C</option>
+                    <option>x86 assembly</option>
+                    <option>ARM assembly</option>
+                </optgroup>
+            </select>
+            <br>
+
+            <canvas id="canvas"></canvas>
+            <aside>This rectangle is the color #DEAD00 in hex, thats pretty neat!</aside>
+            <script>
+                const canvas = document.getElementById("canvas");
+                const ctx = canvas.getContext("2d");
+                ctx.fillStyle = "#DEAD00";
+                // ctx.arc(5,5,10)
+                ctx.fillRect(10, 10, 150, 100);
+            </script>
+
+            <iframe
+                src="https://en.wikipedia.org/wiki/University_of_California,_San_Diego"
+                title="UCSD Wiki"
+                width="400"
+                height="300">
+        </iframe>
         <br>
+        <svg width="100" height="100">
+            <circle cx="50" cy="70" r="20" fill="#fE0"/>
+            <circle cx="50" cy="40" r="15" fill="#ffA"/>
+            <circle cx="50" cy="20" r="10" fill="#ff2"/>
+            <rect x="45" y="22" width="10" height="5" fill="#000"/>
+            <rect x="43" y="115" width="15" height="5" fill="#000"/>
+            <rect x="35" y="105" width="30" height="5" fill="#000"/>
+        </svg>
+        <details>
+            <summary>Why is there a black bar on the snowman's face?</summary>
+                This is a <b>yellow</b> snowman made from <b>yellow</b> snow. He is being censored with a black bar over his mouth because he is speaking against Big Avalanche.
+        </details>
+        
 
-        <canvas id="canvas"></canvas>
-        <aside>This rectangle is the color #DEAD00 in hex, thats pretty neat!</aside>
-        <script>
-            const canvas = document.getElementById("canvas");
-            const ctx = canvas.getContext("2d");
-            ctx.fillStyle = "#DEAD00";
-            // ctx.arc(5,5,10)
-            ctx.fillRect(10, 10, 150, 100);
-        </script>
-
-        <iframe
-            src="https://en.wikipedia.org/wiki/University_of_California,_San_Diego"
-            title="UCSD Wiki"
-            width="400"
-            height="300">
-      </iframe>
-      <br>
-      <svg width="100" height="100">
-        <circle cx="50" cy="70" r="20" fill="#fE0"/>
-        <circle cx="50" cy="40" r="15" fill="#ffA"/>
-        <circle cx="50" cy="20" r="10" fill="#ff2"/>
-        <rect x="45" y="22" width="10" height="5" fill="#000"/>
-        <rect x="43" y="115" width="15" height="5" fill="#000"/>
-        <rect x="35" y="105" width="30" height="5" fill="#000"/>
-      </svg>
-      <details>
-        <summary>Why is there a black bar on the snowman's face?</summary>
-            This is a <b>yellow</b> snowman made from <b>yellow</b> snow. He is being censored with a black bar over his mouth because he is speaking against Big Avalanche.
-      </details>
-      
-
-    </main>
-    <footer>
-        <hr>
-        <pre>
-           ________               __        
-           \______ \   _______  _|__| ____  
-            |    |  \_/ __ \  \/ /  |/    \ 
-            |    `   \  ___/\   /|  |   |  \
-           /_______  /\___  >\_/ |__|___|  /
-                   \/     \/             \/ 
-        </pre>
-        <cite>ASCII art generated at patorjk.com</cite>
-    </footer>
-</body>
+        </main>
+        <footer>
+            <hr>
+            <pre>
+            ________               __        
+            \______ \   _______  _|__| ____  
+                |    |  \_/ __ \  \/ /  |/    \ 
+                |    `   \  ___/\   /|  |   |  \
+            /_______  /\___  >\_/ |__|___|  /
+                    \/     \/             \/ 
+            </pre>
+            <cite>ASCII art generated at patorjk.com</cite>
+        </footer>
+    </body>
+</html>
