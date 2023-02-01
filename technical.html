@@ -1,0 +1,87 @@
+<head>
+    <title>Devin's Website</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href=/index.html>Home</a></li>
+                <li><a href=/personal.html>Personal</a></li>
+                <li><a href=/lab.html>Lab</a></li>
+                <li><a href=/technical.html>Technical</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>
+            Welcome to my technical info!
+        </h1>
+        <h2>
+            Technical Synopsis:
+        </h2>
+            <label for="traits">My top technical traits</label>
+            <ol class="traits">
+                <li>I always want to learn more</li>
+                <li>I have gained a solid foundation in computer science from my classwork</li>
+                <li>I have improved my knowledge through my involvmemt in projects and clubs</li>            
+            </ol>
+        <table>
+            <caption>Technical Abilities</caption>
+            <colgroup>
+                <col span="2" class="knowledge-amount">
+            </colgroup>
+            <tr>
+                <th scope="col">Skill</th>
+                <th scope="col">Ability</th>
+                <th scope="col">Years Used</th>
+            </tr>
+            <tr>
+                <td>Java</td>
+                <td>6</td>
+                <td>>3</td>
+            </tr>
+            <tr>
+                <td>C++</td>
+                <td>5</td>
+                <td>>2</td>
+            </tr>
+            <tr>
+                <td>Git</td>
+                <td>7</td>
+                <td>>1</td>
+            </tr>
+        </table>
+        <template id="skillRow">
+            <tr>
+              <td class="skill"></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </template>
+        <div>
+        </div>
+        <br>
+        <section>
+        <code>
+        #include "Octree.hpp"
+        using namespace std;
+        namespace oct{
+        // base class for polymorphic capabilities
+        class Node{
+        public:
+            int type = -1;
+            Node(){
+                this->type = 0;
+            }
+            virtual int getType(){
+                return this->type;
+            }
+        };
+    </code>
+    <aside>
+        This is some sample code from one of my most recent projects
+    </aside>
+    </section>
+    </main>
+</body>
