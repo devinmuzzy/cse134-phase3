@@ -1,0 +1,46 @@
+
+#cats img{
+    width: 10%;
+    position: relative;
+    opacity: 100;
+}
+
+#cats #cat1{
+      animation: 2.5s linear 0s infinite alternate fade-in-out;
+
+      animation-delay: 0s;
+}
+#cats #cat2{
+    animation: 2.5s linear 0s infinite alternate fade-in-out;
+
+      animation-delay: 1s;
+}
+#cats #cat3{
+    animation: 2.5s linear 0s infinite alternate fade-in-out;
+
+      animation-delay: 2s;
+}
+#cats #cat4{
+    animation: 2.5s linear 0s infinite alternate fade-in-out;
+
+      animation-delay: 3s;
+}
+#cats #cat5{
+    animation: 2.5s linear 0s infinite alternate fade-in-out;
+
+      animation-delay: 4s;
+}
+  
+@keyframes fade-in-out {
+    from {
+        filter:opacity(0)
+    }
+
+    75% {
+        filter:opacity(0)
+    }
+
+    to {
+        filter:opacity(100)
+    }
+} 

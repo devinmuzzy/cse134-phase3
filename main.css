@@ -1,0 +1,58 @@
+:root{
+    --link-color: rgb(30, 30, 113);
+    --link-color-hover: rgb(160, 101, 101);
+}
+
+*{
+    font-family: monospace;
+}
+h1{
+    font-size:3rem;
+    position:relative;
+    left:5%
+}
+h2{
+    position: relative;
+    left:10%
+
+}
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+  }
+
+nav ul li {
+    list-style-type: none;
+    font-size: 2rem;
+}
+nav a {
+    color:var(--link-color);
+}
+nav a:hover{
+    color:var(--link-color-hover);
+}
+
+#box{
+    animation: 3s ease-in 1s infinite reverse both running;
+}
+
+#media *{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#sidebar {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+    background-color: red;
+}
+
+#sidebar ul li {
+    list-style-type: none;
+    justify-content: space-around;
+    font-size: 1rem;
+}

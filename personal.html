@@ -3,6 +3,7 @@
 <head>
     <title>Devin's Website</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/main.css"  />
 </head>
 <body>
     <header>
@@ -27,21 +28,27 @@
             <option value="Comment">
             <option value="question">
             <option value="concern">
-
         </datalist>
         <form>
             <textarea>What are you doing</textarea>
             <button>submit</button>
         </form>
-
-        <figure>
+        <nav id="sidebar">
+            <ul>
+                <li><a href=#crack-climbing>Crack Climbing</a></li>
+                <li><a href=#sled-video>Sledding</a></li>
+                <li><a href=#jtree-photo>Joshua Tree</a></li>
+            </ul>
+        </nav>
+        <div id="media">
+        <figure id="jtree-photo">
             <img src="media/me_jtree.png" width="300"
                  alt="selfie of me looking into camera">
-            <figcaption>A photograph of me in joshua tree</figcaption>
+            <figcaption>In this photograph, you can see me during one of my favorite climbing trips to Joshua Tree National Park. This experience challenged me physically and mentally, but also brought me a sense of peace and freedom that I find only in the great outdoors. For me, climbing is not just a sport, but a way of life that teaches me the importance of perseverance, trust, and mindfulness. Whether I am climbing a mountain or a boulder, I am constantly pushing my limits and striving for new heights. </figcaption>
         </figure>
-        <video controls width="300">
+        <aside>I believe adventures can be found close to home and that taking advantage of them is crucial for personal growth and wellbeing. Here is an example of me doing that in Northern California near my hometown!</aside>
+        <video id="sled-video" controls width="300">
             <source src="/media/sled.mov" type="video/webm">
-        
         </video>
         <figure>
             <figcaption>Listen to my favorite song!</figcaption>
@@ -50,11 +57,13 @@
                 src="/media/website_music.mp3">
             </audio>
         </figure>
-        <picture>
+        <aside>This photo shows me engaged in my passion for trad climbing, intently focused on the climb with the stunning natural scenery as my backdrop. It represents a moment of personal achievement and highlights the challenge of the sport, which requires both physical ability and mental fortitude.</aside>
+        <picture id="crack-climbing">
             <source srcset="/media/climbing.JPG"
             media="(orientation: portrait)">
             <img src="/media/climbing.JPG" width="300" alt="">
         </picture>
+        </div>
     </main>
 </body>
 </html>
