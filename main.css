@@ -13,8 +13,7 @@ h1{
 }
 h2{
     position: relative;
-    left:10%
-
+    left:5%
 }
 nav ul {
     display: flex;
@@ -37,22 +36,37 @@ nav a:hover{
     animation: 3s ease-in 1s infinite reverse both running;
 }
 
-#media *{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
+#sidebar {
+    position: sticky;
+    top: 30%;
+    /* right: 50%; */
+    width: 22rem;
+    left: 80%;
+
+}
+#sidebar ul{
+    display:flex;
+    flex-direction: column-reverse;
+    left:0%;
 }
 
-#sidebar {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column-reverse;
-    background-color: red;
-}
 
 #sidebar ul li {
     list-style-type: none;
+    font-size: 2rem;
+    border:0.1rem rgb(70, 128, 141) solid;
+
+
+}
+#sidebar ul li a {
+    text-decoration: none;
+}
+
+
+main {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    align-content: flex-end;
     justify-content: space-around;
-    font-size: 1rem;
 }

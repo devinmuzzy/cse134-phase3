@@ -1,34 +1,39 @@
 
 #cats img{
-    width: 10%;
-    position: relative;
-    opacity: 100;
+    width: 30%;
+    position: absolute;
 }
 
-#cats #cat1{
-      animation: 2.5s linear 0s infinite alternate fade-in-out;
+#cats
+ {
+    position: relative;
+    left: 40%;
+    /* transform: translate(-50%, 50%); */
+ }
 
+#cats #cat1{
+      animation: 5s linear 0s infinite alternate fade-in-out;
       animation-delay: 0s;
 }
 #cats #cat2{
-    animation: 2.5s linear 0s infinite alternate fade-in-out;
-
-      animation-delay: 1s;
-}
-#cats #cat3{
-    animation: 2.5s linear 0s infinite alternate fade-in-out;
+    animation: 5s linear 0s infinite alternate fade-in-out;
 
       animation-delay: 2s;
 }
-#cats #cat4{
-    animation: 2.5s linear 0s infinite alternate fade-in-out;
-
-      animation-delay: 3s;
-}
-#cats #cat5{
-    animation: 2.5s linear 0s infinite alternate fade-in-out;
+#cats #cat3{
+    animation: 5s linear 0s infinite alternate fade-in-out;
 
       animation-delay: 4s;
+}
+#cats #cat4{
+    animation: 5s linear 0s infinite alternate fade-in-out;
+
+      animation-delay: 6s;
+}
+#cats #cat5{
+    animation: 5s linear 0s infinite alternate fade-in-out;
+
+      animation-delay: 8s;
 }
   
 @keyframes fade-in-out {
@@ -36,10 +41,12 @@
         filter:opacity(0)
     }
 
-    75% {
+    60% {
         filter:opacity(0)
     }
-
+    80% {
+        filter: opacity(100);
+    }
     to {
         filter:opacity(100)
     }
