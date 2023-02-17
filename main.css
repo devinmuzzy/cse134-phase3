@@ -107,5 +107,10 @@ form {
     #cats img {
         width:100vw;
     }
-
+}
+/* Tablet */
+@media (min-width: 1200px) {
+    #cats img {
+        width:100vw;
+    }
 }
