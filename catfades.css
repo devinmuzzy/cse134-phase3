@@ -1,13 +1,12 @@
 
 #cats img{
-    width: 30%;
+    height: 90vh;
     position: absolute;
 }
 
 #cats
  {
     position: relative;
-    left: 40%;
     /* transform: translate(-50%, 50%); */
  }
 

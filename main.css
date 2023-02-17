@@ -17,7 +17,8 @@ h2{
 }
 nav ul {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
     background-color: white;
   }
 
@@ -50,13 +51,10 @@ nav a:hover{
     left:0%;
 }
 
-
 #sidebar ul li {
     list-style-type: none;
     font-size: 2rem;
     border:0.1rem rgb(70, 128, 141) solid;
-
-
 }
 #sidebar ul li a {
     text-decoration: none;
@@ -69,4 +67,38 @@ main {
     flex-direction: column;
     align-content: flex-end;
     justify-content: space-around;
+}
+
+#media {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+figure {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+/* Mobile */
+@media (max-width: 640px) {
+    * {color:blue;}
+    #sidebar {
+        position: sticky;
+        top: 0%;
+        /* right: 50%; */
+        width: 100%;
+        left: 50%;
+        /* opacity: 0%; */
+    }
+    #sidebar ul{
+        display:flex;
+        flex-direction: row-reverse;
+        left:0%;
+    }
+    #cats img {
+        width:100vw;
+    }
 }
