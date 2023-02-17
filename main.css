@@ -66,7 +66,7 @@ main {
     /* flex-wrap: wrap; */
     flex-direction: column;
     align-content: flex-end;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 #media {
@@ -82,9 +82,15 @@ figure {
     align-content: center;
     justify-content: center;
 }
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
 /* Mobile */
 @media (max-width: 640px) {
-    * {color:blue;}
+    /* * {color:blue;} */
     #sidebar {
         position: sticky;
         top: 0%;
@@ -101,4 +107,5 @@ figure {
     #cats img {
         width:100vw;
     }
+
 }
