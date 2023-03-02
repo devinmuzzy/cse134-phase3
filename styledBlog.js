@@ -30,8 +30,10 @@ export class Blog{
                 <label for="edit-summary">Summary</label>
                 <textarea name="summary" id="edit-summary" required>${this.summary}</textarea>
             </div>
+            <div class="prompt-btns">
                 <button id="editCancelBtn" value="cancel">Cancel</button>
                 <button value="save">Save</button>
+            </div>
         </form>
         `
         return p;
@@ -122,8 +124,10 @@ export function addBlogPrompt(){
             <label for="summary">Summary</label>
             <textarea name="summary" id="summary" required></textarea>
         </div>
+        <div class="prompt-btns">
             <button id="addCancelBtn" value="cancel">Cancel</button>
             <button value="save">Save</button>
+        </div>
     </form>
     `
     dialogEl.innerHTML = p;
@@ -270,9 +274,11 @@ function deleteBlogDialog(){
     }
     let p = `
     <form method="dialog">
-            <h4>Are you sure you want to delete?</h4>
+            <h3>Are you sure you want to delete?</h3>
+            <div class="prompt-btns">
             <button value="false">cancel</button>
-            <button value="true">yes</button>
+            <button class="confirm-delete" value="true">delete</button>
+            </div>
     </form>
     `
     dialogEl.innerHTML = p;

@@ -8,10 +8,16 @@ form {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+.prompt-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-bottom: 15px;
     width: 100%;
 }
@@ -50,9 +56,11 @@ button {
 }
 
 button:hover {
-    background-color: #0062cc;
+    background-color: #054f9e;
 }
 .editBtn {
+    width: 2rem;
+    height: 2rem;
     background-color: #0062cc;
     color: #fff;
     font-size: 1rem;
@@ -70,6 +78,8 @@ button:hover {
     height:2rem;
 }
 .deleteBtn {
+    width: 2rem;
+    height: 2rem;
     background-color: #dc3545;
     color: #fff;
     font-size: 1rem;
@@ -85,3 +95,34 @@ button:hover {
     background-size: 20px;
     padding-left: 30px;
 }
+
+.confirm-delete:hover{
+    background-color: #dc3545;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .date {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .summary {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
