@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crud App</title>
+        <!-- <script type="module" src="blog.js"></script> -->
+    </head>
+    <body>
+        <h1>Blog List</h1>
+        <button id="addBtn">Add</button>
+        <ul id="blogList">
+            <li>Test</li>
+        </ul>
+    <script type="module">
+        import * as blog from './blog.js';
+        
+        blog.build(document.getElementById('blogList'));
+        blog.testFillBlogs()
+
+        let blogList = document.getElementById('blogList');
+        blogList.innerHTML = blog.getBlogsHTML();
+        let addBtn = document.getElementById('addBtn');
+        addBtn.addEventListener('click', () => blog.addBlogPrompt())
+        blog.updateUI();
+    </script>
+    </body>
+</html>

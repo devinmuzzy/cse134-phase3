@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Native Dialogs</title>
+        <script src="/node_modules/dompurify/dist/purify.js"></script>
+    </head>
+    <body>
+        <h1>Native Dialog</h1>
+        <button id="alert">Alert</button>
+        <button id="confirm">Confirm</button>
+        <button id="prompt">Prompt</button>
+        <button id="safePrompt">Safer Prompt</button>
+        <hr>
+        <output id="output"></output>
+    </body>
+    <script>
+        let alertBtn = document.getElementById('alert');
+        alertBtn.addEventListener('click', () => alert('hello america'));
+        let confirmBtn = document.getElementById('confirm');
+        confirmBtn.addEventListener('click', () => {
+            let out = document.getElementById('output');
+            out.innerText = "";
+            window.requestAnimationFrame(() => {window.requestAnimationFrame(()=> {let answer = confirm("do you confirm this?");
+            out.innerText = answer;})});
+        });
+        let promptBtn = document.getElementById('prompt');
+        promptBtn.addEventListener('click', promptFunc);
+        function promptFunc(){
+            let out = document.getElementById('output');
+            out.innerText = "";
+            let promptVal = prompt('Prompt');
+            if(promptVal != null){
+                out.innerHTML = promptVal;
+            }
+            else{
+                out.innerHTML = "No user input provided";
+            }
+        }
+        let safePromptBtn = document.getElementById('safePrompt');
+        safePromptBtn.addEventListener('click', safePromptFunc);
+        function safePromptFunc(){
+            let out = document.getElementById('output');
+            out.innerText = ""
+            let promptVal = prompt('Safe Prompt');
+            let clean = DOMPurify.sanitize(promptVal);
+            if(clean != null){
+                out.innerText = clean;
+            }
+            else{
+                out.innerText = "No user input provided";
+            }
+        }
+    </script>
+</html>

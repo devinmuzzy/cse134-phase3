@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Custom Dialogs</title>
+        <script src="/node_modules/dompurify/dist/purify.js"></script>
+        <!-- <script type="module" src="customdialog.js"></script> -->
+    </head>
+    <body>
+        <h1>Custom Dialog</h1>
+        <button id="alert">Alert</button>
+        <button id="confirm">Confirm</button>
+        <button id="prompt">Prompt</button>
+        <hr>
+        <output id="output"></output>
+        <script type="module">
+            import {customAlert, customConfirm, customPrompt} from './customdialog.js';
+
+            function setOutput(val){
+                let out = document.getElementById('output');
+                out.innerText = val;
+            }
+            function setConfirmOuput(val){
+                setOutput("Confirm Result: " + val)
+            }
+            function setPromptOutput(val){
+                if (val == null){
+                    val = "No user input provided";
+                    setOutput(val);
+                    return;
+                }
+                setOutput("Prompt Result: " + val)
+            }
+
+            document.getElementById('alert').addEventListener('click', () => {
+                customAlert("Custom Alert!");
+            });
+            document.getElementById('confirm').addEventListener('click', () => {
+                setOutput("");
+                window.requestAnimationFrame(() => {window.requestAnimationFrame(()=> {customConfirm("Please Confirm!", setConfirmOuput);})});
+            });
+            document.getElementById('prompt').addEventListener('click', () => {
+                setOutput("");
+                window.requestAnimationFrame(() => {window.requestAnimationFrame(()=> {customPrompt("Who are you...?!", setPromptOutput);})});
+            });
+        </script>
+    </body>
+</html>
