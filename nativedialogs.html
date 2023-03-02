@@ -56,7 +56,7 @@
             window.requestAnimationFrame(() => {window.requestAnimationFrame(()=> {
             let promptVal = prompt('Safe Prompt');
             let clean = DOMPurify.sanitize(promptVal);
-            if(clean != null){
+            if(promptVal != null){
                 out.innerText = clean;
             }
             else{
