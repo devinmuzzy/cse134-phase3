@@ -30,7 +30,7 @@ export class Blog{
                 <label for="edit-summary">Summary</label>
                 <textarea name="summary" id="edit-summary" required>${this.summary}</textarea>
             </div>
-                <button value="cancel">Cancel</button>
+                <button id="editCancelBtn" value="cancel">Cancel</button>
                 <button value="save">Save</button>
         </form>
         `
@@ -63,13 +63,15 @@ export function addBlogPrompt(){
         dialogEl.id = 'blogPromptDialog'
         document.body.append(dialogEl);
         dialogEl.addEventListener('close', () => {
-            let title = document.getElementById('title');
-            let date = document.getElementById('date');
-            let summary = document.getElementById('summary');
-            console.log(title);
-            console.log(date);
-            console.log(summary);
-            createAddBlog(title.value, date.value, summary.value)
+            if(dialogEl.returnValue == 'save'){
+                let title = document.getElementById('title');
+                let date = document.getElementById('date');
+                let summary = document.getElementById('summary');
+                console.log(title);
+                console.log(date);
+                console.log(summary);
+                createAddBlog(title.value, date.value, summary.value)
+            }
         })
     }
     let p = `
@@ -83,11 +85,12 @@ export function addBlogPrompt(){
             <label for="summary">Summary</label>
             <textarea name="summary" id="summary" required></textarea>
         </div>
-            <button value="cancel">Cancel</button>
+            <button id="addCancelBtn" value="cancel">Cancel</button>
             <button value="save">Save</button>
     </form>
     `
     dialogEl.innerHTML = p;
+    document.getElementById('addCancelBtn').addEventListener('click', ()=>{document.getElementById('blogPromptDialog').close()})
     dialogEl.showModal();
 }
 
@@ -206,10 +209,11 @@ function editBlogDialog(blog){
                 executeEdit(title, date, summary)
             }
             console.log(dialogEl.returnValue)
-        })
+        });
     }
     let p = blog.asEditPrompt();
     dialogEl.innerHTML = p;
+    document.getElementById('editCancelBtn').addEventListener('click', ()=>{document.getElementById('editBlogDialog').close()});
     dialogEl.showModal();
 }
 
@@ -264,8 +268,8 @@ function deleteBlogEvent(deleteBtn){
 
 
 export function testFillBlogs(){
-    addBlog(new Blog('devin', Date.now(), 'hey im devin'));
-    addBlog(new Blog('mark', Date.now(), 'hey im mark'));
-    addBlog(new Blog('sammy', Date.now(), 'hey im sammy'));
-    addBlog(new Blog('reight', Date.now(), 'hey im reight'));
+    addBlog(new Blog('devin', '2022-12-05', 'hey im devin'));
+    addBlog(new Blog('mark', '2022-12-05', 'hey im mark'));
+    addBlog(new Blog('sammy', '2022-12-05', 'hey im sammy'));
+    addBlog(new Blog('reight', '2022-12-05', 'hey im reight'));
 }
