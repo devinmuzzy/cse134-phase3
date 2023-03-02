@@ -1,0 +1,117 @@
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  * nav {
+    background-color: #fff;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav a {
+    font-weight: bold;
+  }
+  
+  /* Main styles */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1, h2 {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  nav#sidebar {
+    position: sticky;
+    top: 20px;
+    margin-top: 20px;
+  }
+  
+  aside {
+    margin-bottom: 20px;
+  }
+  
+  /* Media styles */
+  figure {
+    margin-bottom: 20px;
+  }
+  
+  figcaption {
+    font-style: italic;
+    margin-top: 10px;
+  }
+  
+  audio, video {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  
+  picture, img {
+    max-width: 100%;
+    height: auto;
+  }
+  
