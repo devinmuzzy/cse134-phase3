@@ -15,8 +15,8 @@ export class Blog{
                     <p class="title">Title: ${this.title}</p>
                     <p class="date">Date: ${this.date}</p>
                     <p class="summary">Summary: ${this.summary}</p>
-                    <button class="editBtn"><i class="fa fa-home"></i>edit</button>
-                    <button class="deleteBtn">delete</button>
+                    <button class="editBtn"> </button>
+                    <button class="deleteBtn"> </button>
                 </li>`;
         return s;
     }  
@@ -272,7 +272,7 @@ function deleteBlogDialog(){
     }
     let p = `
     <form method="dialog">
-            <h5>Are you sure you want to delete?</h5>
+            <h4>Are you sure you want to delete?</h4>
             <button value="false">cancel</button>
             <button value="true">yes</button>
     </form>

@@ -11,6 +11,7 @@
         gtag('config', 'G-BCVQSR405N');
         </script>
         <title>Crud App</title>
+        <link rel="stylesheet" type="text/css" href="/crudstyle.css"  />
     </head>
     <body>
         <h1>Blog List</h1>
@@ -19,7 +20,7 @@
             <li>Test</li>
         </ul>
     <script type="module">
-        import * as blog from './blog.js';
+        import * as blog from './styledBlog.js';
         
         blog.build(document.getElementById('blogList'));
         blog.testFillBlogs()
