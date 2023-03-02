@@ -38,6 +38,7 @@
         function promptFunc(){
             let out = document.getElementById('output');
             out.innerText = "";
+            window.requestAnimationFrame(() => {window.requestAnimationFrame(()=> {
             let promptVal = prompt('Prompt');
             if(promptVal != null){
                 out.innerHTML = promptVal;
@@ -45,12 +46,14 @@
             else{
                 out.innerHTML = "No user input provided";
             }
+            })});
         }
         let safePromptBtn = document.getElementById('safePrompt');
         safePromptBtn.addEventListener('click', safePromptFunc);
         function safePromptFunc(){
             let out = document.getElementById('output');
             out.innerText = ""
+            window.requestAnimationFrame(() => {window.requestAnimationFrame(()=> {
             let promptVal = prompt('Safe Prompt');
             let clean = DOMPurify.sanitize(promptVal);
             if(clean != null){
@@ -59,6 +62,7 @@
             else{
                 out.innerText = "No user input provided";
             }
+            })});
         }
     </script>
 </html>
