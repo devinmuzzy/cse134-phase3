@@ -1,4 +1,12 @@
 
+#catContiainer {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 #cats img{
     height: 90vh;
     position: absolute;
@@ -11,6 +19,7 @@
  }
 
 #cats #cat1{
+    position: relative;
       animation: 5s linear 0s infinite alternate fade-in-out;
       animation-delay: 0s;
 }

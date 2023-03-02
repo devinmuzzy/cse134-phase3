@@ -1,0 +1,179 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Typography */
+  body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+  }
+  
+  p {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Navigation */
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+  
+  .top-nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .top-nav li {
+    margin-right: 2rem;
+  }
+  
+  .top-nav a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .top-nav a:hover {
+    color: #0088cc;
+  }
+  /* Style the main content */
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  main h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  main h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Style the sidebar navigation */
+  #sidebar {
+    position: fixed;
+    top: 5rem;
+    left: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #sidebar h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  #sidebar ul {
+    list-style: none;
+  }
+  
+  #sidebar li {
+    margin: 0.5rem 0;
+  }
+  
+  #sidebar a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* Style the media content */
+  #media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #media figure {
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  #media figcaption {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  #media img {
+    max-width: 100%;
+  }
+  
+  #media video {
+    max-width: 100%;
+  }
+  
+  #media aside {
+    margin: 1rem;
+    font-style: italic;
+  }
+  
+  /* Style the form */
+  form {
+    margin-top: 1rem;
+  }
+  
+  form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  form button {
+    padding: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Style the datalist */
+  datalist {
+    display: none;
+  }
+  
+  /* Media queries */
+  @media (max-width: 768px) {
+    main {
+      margin: 2rem 1rem;
+    }
+  
+    #sidebar {
+      position: static;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+  

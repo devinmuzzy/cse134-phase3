@@ -35,7 +35,7 @@
   }
   
   /* Navigation */
-  .nav {
+  .top-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,32 +44,32 @@
     padding: 1rem;
   }
   
-  .nav ul {
+  .top-nav ul {
     display: flex;
     list-style: none;
   }
   
-  .nav li {
+  .top-nav li {
     margin-right: 2rem;
   }
   
-  .nav a {
+  .top-nav a {
     color: #333;
     text-decoration: none;
     transition: all 0.3s ease;
   }
   
-  .nav a:hover {
+  .top-nav a:hover {
     color: #0088cc;
   }
   
-  /* Main */
   main {
-    padding: 2rem;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
   section {
     margin-bottom: 3rem;
   }
@@ -77,7 +77,116 @@
   section:last-child {
     margin-bottom: 0;
   }
-  
+
+/* Style the ordered list of technical traits */
+ol#traits {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ol#traits li {
+  margin: 0.5em 0;
+}
+
+ol#traits li strong {
+  font-weight: bold;
+}
+
+/* Style the table */
+table {
+  border-collapse: collapse;
+  margin-top: 1.5em;
+  width: 100%;
+}
+
+table caption {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+table th,
+table td {
+  padding: 0.5em;
+  text-align: left;
+}
+
+/* Style the skill rows in the table */
+table .skill {
+  font-weight: bold;
+}
+
+/* Style the code example */
+code {
+  display: block;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  margin-top: 1.5em;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+/* Style the aside element */
+aside {
+  font-style: italic;
+  margin-top: 1em;
+}
+
+
+/* style the fieldset */
+fieldset {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #eee;
+}
+
+/* style the radio buttons and labels */
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+/* style the language select */
+#language-select {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+/* style the canvas */
+canvas {
+  display: block;
+  margin: 1.5rem auto;
+  border: 1px solid #ccc;
+}
+
+/* style the aside */
+aside {
+  display: block;
+  margin: 1.5rem auto;
+  background-color: #f7f7f7;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* style the iframe */
+iframe {
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* style the SVG */
+#box {
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* style the details */
+details {
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background-color: #eee;
+}
+
   /* Media Queries */
   @media screen and (max-width: 768px) {
     .nav ul {
