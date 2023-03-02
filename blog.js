@@ -1,3 +1,5 @@
+import * as DOMPurify from "/node_modules/dompurify/dist/purify.js";
+
 export var storage = [];
 var deathRow = null;
 var editRow = null;
@@ -55,6 +57,42 @@ export class Blog{
 
 
 
+
+// stores storage into session
+function storageToSession(){
+    // turn storage into json object
+    let blogs = [];
+    for(const i in storage){
+        let t = {}
+        t['title'] = storage[i].title;
+        t['date'] = storage[i].date;
+        t['summary'] = storage[i].summary;
+        blogs.push(t);
+    }
+    const blogDict = {"blogs":blogs}
+    const blogJSON = JSON.stringify(blogDict);
+    console.log(blogJSON);
+    localStorage.setItem("blogStorage", blogJSON);
+}
+
+function storageFromSession(){
+    let stringJSON = localStorage.getItem("blogStorage");
+    if(stringJSON == null){
+        storage = [];
+        return;
+    }
+    let blogJSON = JSON.parse(stringJSON);
+    let newStorage = []
+    for(const i in blogJSON['blogs']){
+        let title = blogJSON['blogs'][i]['title'];
+        let date = blogJSON['blogs'][i]['date'];
+        let summary = blogJSON['blogs'][i]['summary'];
+        console.log(title +", " + date + ", " + summary)
+        newStorage.push(new Blog(title, date, summary))
+    }
+    storage = newStorage;
+}
+
 // prompt the user for info pertaining their new blog
 export function addBlogPrompt(){
     let dialogEl = document.getElementById('blogPromptDialog')
@@ -72,6 +110,7 @@ export function addBlogPrompt(){
                 console.log(summary);
                 createAddBlog(title.value, date.value, summary.value)
             }
+            console.log(dialogEl.returnValue);
         })
     }
     let p = `
@@ -90,7 +129,7 @@ export function addBlogPrompt(){
     </form>
     `
     dialogEl.innerHTML = p;
-    document.getElementById('addCancelBtn').addEventListener('click', ()=>{document.getElementById('blogPromptDialog').close()})
+    document.getElementById('addCancelBtn').addEventListener('click', ()=>{document.getElementById('blogPromptDialog').close(); dialogEl.returnValue = 'NOT SAVE'})
     dialogEl.showModal();
 }
 
@@ -106,25 +145,19 @@ export function addBlog(blog){
     updateUI();
 }
 
-// removes blog from vals
-function removeBlogVals(title, date, summary){
-    let b = new Blog(title, date, summary);
-    removeBlog(b);
-}
-
-function updateBlog(blog, title, date, summary){
-    let index = storage.findIndex((b) => b.equals(blog));
-    if(index < 0){
-        console.log("ERROR IN UPDATE BLOG")
-        return null;
-    }
-    console.log(storage);
-    console.log(index);
-    console.log(blog);
-    console.log(blog.title);
-    storage[index] = new Blog(title, date, summary);
-    updateUI();
-}
+// function updateBlog(blog, title, date, summary){
+//     let index = storage.findIndex((b) => b.equals(blog));
+//     if(index < 0){
+//         console.log("ERROR IN UPDATE BLOG")
+//         return null;
+//     }
+//     console.log(storage);
+//     console.log(index);
+//     console.log(blog);
+//     console.log(blog.title);
+//     storage[index] = new Blog(title, date, summary);
+//     updateUI();
+// }
 
 // returns the blog in storage with corrosponding parts
 function getBlog(title, date, summary){
@@ -167,6 +200,7 @@ export function updateUI(){
     htmlListObj.innerHTML = getBlogsHTML();
     document.querySelectorAll('.deleteBtn').forEach((btn) => btn.addEventListener('click', () => {deleteBlogEvent(btn)}))
     document.querySelectorAll('.editBtn').forEach((btn) => btn.addEventListener('click', () => {editBlogEvent(btn)}))
+    storageToSession();
 }
 
 function editBlogEvent(editBtn){
@@ -202,10 +236,14 @@ function editBlogDialog(blog){
         dialogEl.id = 'editBlogDialog'
         document.body.append(dialogEl);
         dialogEl.addEventListener('close', () => {
-            if(dialogEl.returnValue == 'save'){
+            if(dialogEl.returnValue === 'save'){
                 let title = document.getElementById('edit-title').value;
                 let date = document.getElementById('edit-date').value;
                 let summary = document.getElementById('edit-summary').value;
+                // title =  DOMPurify.sanitize(title);
+                // date =  DOMPurify.sanitize(date);
+                // summary =  DOMPurify.sanitize(summary);
+                console.log('executing edit..' + dialogEl.returnValue) 
                 executeEdit(title, date, summary)
             }
             console.log(dialogEl.returnValue)
@@ -213,7 +251,7 @@ function editBlogDialog(blog){
     }
     let p = blog.asEditPrompt();
     dialogEl.innerHTML = p;
-    document.getElementById('editCancelBtn').addEventListener('click', ()=>{document.getElementById('editBlogDialog').close()});
+    document.getElementById('editCancelBtn').addEventListener('click', ()=>{document.getElementById('editBlogDialog').close();dialogEl.returnValue = 'NOT SAVE'});
     dialogEl.showModal();
 }
 
@@ -261,6 +299,9 @@ function deleteBlogEvent(deleteBtn){
     let summaryContent = summary.textContent.slice(9);
     let dateContent = date.textContent.slice(6);
     let titleContent = title.textContent.slice(7);
+    // summaryContent = DOMPurify.sanitize(summaryContent);
+    // dateContent =  DOMPurify.sanitize(dateContent);
+    // titleContent = DOMPurify.sanitize(titleContent);
     console.log(`${summaryContent},${dateContent},${titleContent}`)
     deathRow = new Blog(titleContent, dateContent, summaryContent)
     deleteBlogDialog();
@@ -268,8 +309,10 @@ function deleteBlogEvent(deleteBtn){
 
 
 export function testFillBlogs(){
-    addBlog(new Blog('devin', '2022-12-05', 'hey im devin'));
-    addBlog(new Blog('mark', '2022-12-05', 'hey im mark'));
-    addBlog(new Blog('sammy', '2022-12-05', 'hey im sammy'));
-    addBlog(new Blog('reight', '2022-12-05', 'hey im reight'));
+    storageFromSession();
+    // storage = [new Blog('devin', '2022-12-05', 'hey im devin'),
+    //         new Blog('mark', '2022-12-05', 'hey im mark'),
+    //         new Blog('sammy', '2022-12-05', 'hey im sammy'),
+    //         new Blog('reight', '2022-12-05', 'hey im reight')];
+    // updateUI();
 }

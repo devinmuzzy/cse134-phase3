@@ -15,9 +15,6 @@
         
         blog.build(document.getElementById('blogList'));
         blog.testFillBlogs()
-
-        let blogList = document.getElementById('blogList');
-        blogList.innerHTML = blog.getBlogsHTML();
         let addBtn = document.getElementById('addBtn');
         addBtn.addEventListener('click', () => blog.addBlogPrompt())
         blog.updateUI();
