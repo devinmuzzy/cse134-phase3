@@ -1,4 +1,4 @@
-import * as DOMPurify from "/node_modules/dompurify/dist/purify.js";
+
 
 export var storage = [];
 var deathRow = null;
