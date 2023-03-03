@@ -10,9 +10,9 @@ export class Blog{
     }
     asHTML(){
         let s = `<li>
-                    <p class="title">Title: ${this.title}</p>
+                    <p class="title">${this.title}</p>
                     <p class="date">Date: ${this.date}</p>
-                    <p class="summary">Summary: ${this.summary}</p>
+                    <p class="summary">${this.summary}</p>
                     <button class="editBtn"> </button>
                     <button class="deleteBtn"> </button>
                 </li>`;
@@ -210,9 +210,9 @@ function editBlogEvent(editBtn){
     let date = summary.previousElementSibling;
     let title = date.previousElementSibling;
     // remove prefixes add in object creation
-    let summaryContent = summary.textContent.slice(9);
+    let summaryContent = summary.textContent;
     let dateContent = date.textContent.slice(6);
-    let titleContent = title.textContent.slice(7);
+    let titleContent = title.textContent;
     let b = getBlog(titleContent, dateContent, summaryContent);
     console.log("got blog: " + b.title)
     editRow = b;
@@ -300,9 +300,9 @@ function deleteBlogEvent(deleteBtn){
     let date = summary.previousElementSibling;
     let title = date.previousElementSibling;
     // remove prefixes add in object creation
-    let summaryContent = summary.textContent.slice(9);
+    let summaryContent = summary.textContent;
     let dateContent = date.textContent.slice(6);
-    let titleContent = title.textContent.slice(7);
+    let titleContent = title.textContent;
     // summaryContent = DOMPurify.sanitize(summaryContent);
     // dateContent =  DOMPurify.sanitize(dateContent);
     // titleContent = DOMPurify.sanitize(titleContent);
